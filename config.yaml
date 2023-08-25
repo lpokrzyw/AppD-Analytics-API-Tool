@@ -1,0 +1,7 @@
+appdynamicsConfiguration:
+    - base_url: "https://<account>>.saas.appdynamics.com"  # Controller URL
+      account: ""  # Account name
+      apiClientName: ""  # API Client Name
+      secret: "" # API Client's Secret
+      globalAccountName: ""  # AppD Global Account Name - required for Analytics API
+      apiKey: ""  # AppD API Key - requires permissions to publish events to the chosen schema
