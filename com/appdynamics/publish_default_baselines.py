@@ -11,6 +11,7 @@ API_CLIENT_NAME = ""  # API Client Name
 SECRET = ""  # API Client's Secret
 GLOBAL_ACCOUNT_NAME = ""  # AppD Global Account Name - required for Analytics API
 API_KEY = ""  # AppD API Key - requires permissions to publish events to the chosen schema
+EVENT_SERVICE_ENDPOINT = ""  # e.g. https://fra-ana-api.saas.appdynamics.com
 ACCESS_TOKEN = get_access_token(url=BASE_URL, api_client=API_CLIENT_NAME, account=ACCOUNT, secret=SECRET)
 
 
@@ -39,7 +40,7 @@ def create_event():
     This method publishes AppD Analytics Events containing application and its chosen default baseline.
     :return: null
     """
-    api_url = "https://fra-ana-api.saas.appdynamics.com/events/publish/defaultBaselines"  # For Frankfurt SaaS region
+    api_url = f"{EVENT_SERVICE_ENDPOINT}/events/publish/defaultBaselines"  # For Frankfurt SaaS region
     request_headers = {
         "X-Events-API-AccountName": f"{GLOBAL_ACCOUNT_NAME}",
         "X-Events-API-Key": f"{API_KEY}",
