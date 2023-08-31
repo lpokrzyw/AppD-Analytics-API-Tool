@@ -21,7 +21,7 @@ def get_default_baseline(application_id):
     :param application_id: AppD app id
     :return: chosen default baseline
     """
-    api_url = BASE_URL + f"/controller/restui/baselines/getDefaultBaseline/{str(application_id)}"
+    api_url = f"{BASE_URL}/controller/restui/baselines/getDefaultBaseline/{str(application_id)}"
     request_headers = {f"authorization": "Bearer {ACCESS_TOKEN}"}
     request_response = requests.get(api_url, headers=request_headers)
     response_json = request_response.json()
