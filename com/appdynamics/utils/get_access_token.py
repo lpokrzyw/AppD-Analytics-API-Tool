@@ -8,5 +8,5 @@ def get_access_token(url, account, api_client, secret):
     request_header = {"Content-Type": "application/x-www-form-urlencoded"}
     request_token = requests.post(api_url, data=request_payload, headers=request_header)
     request_response = request_token.json()
-    logging.info("Access token generated: " + str(request_response['access_token'])[:5] + "***")
+    logging.info(f"Access token generated: {str(request_response['access_token'])[:5]} ***")
     return request_response['access_token']
