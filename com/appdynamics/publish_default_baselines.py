@@ -22,15 +22,15 @@ def get_default_baseline(application_id):
     :return: chosen default baseline
     """
     api_url = BASE_URL + f"/controller/restui/baselines/getDefaultBaseline/{str(application_id)}"
-    request_headers = {"authorization": "Bearer " + ACCESS_TOKEN}
+    request_headers = {f"authorization": "Bearer {ACCESS_TOKEN}"}
     request_response = requests.get(api_url, headers=request_headers)
     response_json = request_response.json()
     return response_json['name']
 
 
 def get_all_applications():
-    api_url = BASE_URL + f"/controller/rest/applications"
-    request_headers = {"authorization": "Bearer " + ACCESS_TOKEN}
+    api_url = BASE_URL + "/controller/rest/applications"
+    request_headers = {f"authorization": "Bearer {ACCESS_TOKEN}"}
     request_response = requests.get(api_url, headers=request_headers, params="output=JSON")
     return request_response.json()
 
